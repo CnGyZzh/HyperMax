@@ -18,12 +18,14 @@ generate(){
 [ -d "$SRC" ] && [ -n "$(ls -A "$SRC" 2>/dev/null)" ] || { echo "ERR:profile generation failed device=$DEVICE"; exit 3; }
 TMP="/data/local/tmp/hypermax_thermal.$$"; rm -rf "$TMP"; mkdir -p "$TMP" || exit 4
 cp -af "$SRC"/. "$TMP"/ || { rm -rf "$TMP"; echo "ERR:stage failed"; exit 5; }
+# Unlock both directory and files before replacement.
 chattr -i "$TDIR" "$DST" 2>/dev/null
 find "$DST" -type f -exec chattr -i {} \; 2>/dev/null
 mkdir -p "$DST" || exit 6
 find "$DST" -mindepth 1 -maxdepth 1 -exec rm -rf {} \; 2>/dev/null
 cp -af "$TMP"/. "$DST"/ || { rm -rf "$TMP"; echo "ERR:copy failed"; exit 7; }
 rm -rf "$TMP"
+# files.ini is state consumed by the original module design; write before locking.
 printf '%s\n' "$MODE" > "$DST/files.ini" || { echo "ERR:state write failed"; exit 8; }
 chmod -R 0771 "$TDIR" 2>/dev/null; chown -R root:system "$DST" 2>/dev/null
 chown root:system "$TDIR/decrypt.txt" 2>/dev/null
