@@ -1,8 +1,0 @@
-# Thermal
-persist.sys.enable_templimit=false
-persist.sys.smartpower.display_thermal_temp_threshold=99
-ro.vendor.display.hwc_thermal_dimming=false
-ro.vendor.fps.switch.thermal=false
-ro.vendor.thermal.dimming.enable=false
-ro.thermal.iec.enable=false
-ro.vendor.mi_sf.pq_thermal=false
