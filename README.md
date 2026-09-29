@@ -49,22 +49,7 @@
 > [!WARNING]
 > 高刷新率、触控参数和温控策略会改变设备底层行为，可能增加功耗、发热或稳定性风险。超频显示尤其依赖底层 DTBO 与面板支持。
 
-## 🧩 项目结构
-
-```text
-HyperMax/
-├── functions/              # 温控配置生成组件
-├── profiles/touch/         # 300Hz 触控配置
-├── state/                  # 当前模式状态
-├── webroot/index.html      # 轻量 WebUI
-├── refresh.sh              # 刷新率控制
-├── touch.sh                # 触控控制
-├── thermal.sh              # 温控档位控制
-├── service.sh              # 开机应用
-└── module.prop
-```
-
-## ❤️ Credits
+## 📦 下载\n\n完整可刷模块统一通过 **GitHub Releases** 发布。仓库主页仅保留项目说明，不提供散文件，避免误下载不完整模块。\n\n当前版本：**HyperMax v2.2 · TouchFix**\n\n## ❤️ Credits
 
 HyperMax 是针对 Xiaomi 17 Pro 的**整合与适配项目**，不会将上游作者的成果声明为 Gy 原创。
 
