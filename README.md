@@ -17,7 +17,18 @@ Xiaomi 17 Pro · 高刷 / 触控 / 温控整合适配
 | 🖥️ 刷新率 | 144 / 120 / 90 / 60 Hz | **144Hz** |
 | 👆 触控 | 原机 / 300Hz | **300Hz** |
 | 🌡️ 温控 | 夏日限定 / 深度定制 / 极致性能 / 丧心病狂 | **深度定制** |
-| 🎛️ 控制 | 轻量 WebUI，即时切换 | ✓ |
+| 🎛️ 控制 | Material You / Monet 轻量 WebUI，即时切换 | ✓ |
+
+### v2.4.4 · GreenStatus FastUI
+
+- 修复 **KowSU / KernelSU WebUI 状态读取与解析**，触控、刷新率、温控可正确显示当前状态。
+- 优化 **FastUI**：切换页面不再执行 Shell，按钮点击先即时反馈，再执行后台脚本。
+- 状态读取采用轻量 state 优先，减少重复的 SurfaceFlinger / dumpsys 调用。
+- 刷新率已核对状态统一显示绿色，状态反馈逻辑更加一致。
+- 保留已验证的 **144 / 120 / 90 / 60Hz** 全局刷新率切换逻辑。
+- 保留 **原机 / 300Hz** 触控切换与已验证的 Synaptics 300 配置。
+- 保留原作者四档温控逻辑，不额外修改 mi_thermald。
+- 无常驻轮询，降低 WebUI 与后台额外开销。
 
 ### v2.2 · TouchFix
 
@@ -49,9 +60,9 @@ Xiaomi 17 Pro · 高刷 / 触控 / 温控整合适配
 
 完整可刷模块统一通过 **GitHub Releases** 发布。仓库主页仅保留项目说明，不提供散文件，避免误下载不完整模块。
 
-此 README 记录 **HyperMax v2.2 · TouchFix**；最新版本与附件以 [Releases](https://github.com/CnGyZzh/HyperMax/releases) 为准。
+此 README 当前记录 **HyperMax v2.4.4 · GreenStatus FastUI**；最新版本与附件以 [Releases](https://github.com/CnGyZzh/HyperMax/releases) 为准。
 
-不要将 GitHub 自动生成的 Source code 压缩包当作可刷模块；此仓库当前仅提供项目说明，模块使用 Release 附件分发。
+不要将 GitHub 自动生成的 Source code 压缩包当作可刷模块；模块使用 Release 附件分发。
 
 ## 排查与反馈
 
